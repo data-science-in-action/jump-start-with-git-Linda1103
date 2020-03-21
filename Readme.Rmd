@@ -1,0 +1,52 @@
+---
+ title: "Questions and Solusions about building adv.R"
+ author: "Yalin He"
+ date: "2020/3/20"
+ output: 
+  html_document: default
+  df_print: page
+---
+
+**#1、Install relevant packages** 
+when I start building this book,I was told lacking packages,such as
+`Error in loadNamespace(name) : there is no package called 'bookdown'`
+then i install package`bookdown`by
+`install package("bookdown")`
+In addition,Faced the sort of questions,I installed these packages:`devtools`、`dplyr`、`sloop`、`emo`、`lobstr`、`ggplot2`、`pryr`、`bookdown`、`desc`、`sessioninfo`、`tibble`and so on.
+
+**#2、building book**
+I typed below code to build book.
+`bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")`
+
+**#3、Introduction.Rmd**
+Question:
+```
+Quitting from lines 223-235 (Introduction.Rmd) 
+Error in parse(text = x, srcfile = src) : <text>:2:80: unexpected input
+1: library(dplyr)
+2: contributors <- read.csv("contributors.csv", stringsAsFactors = FALSE,encoding=? 
+```
+Solution:
+I opened `Introduction.Rmd` and added `encoding="UTF-8"`in the end of line 244.
+
+#4 Function.Rmd
+Question 1:
+```
+Quitting from lines 995-1004 (Functions.Rmd) 
+#Error in setwd(dir) : 无法改变工作目录
+```
+Solution 1:
+This is a seriously difficult question for me.I just tried various methods and asked for help form my classmates.But it still is a unsolved question.
+
+Question 2:
+```
+Quitting from lines 96-103 (Functionals.Rmd) 
+Error in loadNamespace(name) : there is no package called 'emo'
+```
+Solution 2:
+`devtools::install_github("hadley/emo")`
+ 
+ Finally,as a new user of Rstudio and Git,I try my best to use them and finish my homework.I am so appreciate that I have chioce to improve my skills.Thank you again.   
+
+
+
